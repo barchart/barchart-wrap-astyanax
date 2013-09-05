@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -25,67 +26,63 @@
 	</description>
 
 	<properties>
-    	<astyanaxVersion>1.56.42</astyanaxVersion>
+		<astyanaxVersion>1.56.42</astyanaxVersion>
 		<unpackSource>target/unpack-source</unpackSource>
 	</properties>
 
 	<dependencies>
 
 		<!-- Embedded, non transitive. -->
-		
 		<dependency>
 			<groupId>com.netflix.astyanax</groupId>
 			<artifactId>astyanax-core</artifactId>
 			<version>${astyanaxVersion}</version>
 			<scope>provided</scope>
-			<optional>true</optional>			
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.netflix.astyanax</groupId>
 			<artifactId>astyanax-thrift</artifactId>
 			<version>${astyanaxVersion}</version>
 			<scope>provided</scope>
-			<optional>true</optional>			
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.netflix.astyanax</groupId>
 			<artifactId>astyanax-cassandra</artifactId>
 			<version>${astyanaxVersion}</version>
 			<scope>provided</scope>
-			<optional>true</optional>			
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.netflix.astyanax</groupId>
 			<artifactId>astyanax-queue</artifactId>
 			<version>${astyanaxVersion}</version>
 			<scope>provided</scope>
-			<optional>true</optional>			
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.netflix.astyanax</groupId>
 			<artifactId>astyanax-entity-mapper</artifactId>
 			<version>${astyanaxVersion}</version>
 			<scope>provided</scope>
-			<optional>true</optional>			
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.netflix.astyanax</groupId>
 			<artifactId>astyanax-recipes</artifactId>
 			<version>${astyanaxVersion}</version>
 			<scope>provided</scope>
-			<optional>true</optional>			
+			<optional>true</optional>
 		</dependency>
-		
-		
-		
+
+
 		<!-- Not embedded, transitive. -->
-
-<dependency>
-<groupId>org.apache.cassandra</groupId>
-<artifactId>cassandra-thrift</artifactId>
-<version>1.2.2</version>
-</dependency>
-
+		<dependency>
+			<groupId>org.apache.cassandra</groupId>
+			<artifactId>cassandra-thrift</artifactId>
+			<version>1.2.2</version>
+		</dependency>
 
 
 	</dependencies>
