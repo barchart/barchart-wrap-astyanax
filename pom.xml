@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -26,7 +27,13 @@
 
 	<properties>
 		<astyanaxVersion>1.56.42</astyanaxVersion>
+		<cassandraVersion>1.2.2</cassandraVersion>
+		<highScaleLibVersion>1.1.4</highScaleLibVersion>
+		
 		<unpackSource>target/unpack-source</unpackSource>
+
+		<guavaVersion>[14.0,15)</guavaVersion>
+		<slf4jVersion>[1.7,2)</slf4jVersion>
 	</properties>
 
 	<dependencies>
@@ -74,6 +81,21 @@
 			<scope>provided</scope>
 			<optional>true</optional>
 		</dependency>
+        <dependency>
+            <groupId>org.apache.cassandra</groupId>
+            <artifactId>cassandra-all</artifactId>
+            <version>${cassandraVersion}</version>
+            <scope>provided</scope>
+            <optional>true</optional>            
+        </dependency>
+        <dependency>
+          <groupId>com.github.stephenc.high-scale-lib</groupId>
+          <artifactId>high-scale-lib</artifactId>
+          <version>${highScaleLibVersion}</version>
+          <scope>provided</scope>
+          <optional>true</optional>          
+        </dependency>
+
 
 
 		<!-- Not embedded, transitive. -->
@@ -82,6 +104,17 @@
 			<artifactId>cassandra-thrift</artifactId>
 			<version>1.2.2</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guavaVersion}</version>
+		</dependency>
+
+
+
+
+
 
 
 	</dependencies>
@@ -187,6 +220,9 @@
 							Ignore-Package,
 						</_removeheaders>
 						<Import-Package>
+							com.google.common.*;version="${guavaVersion}",
+							org.slf4j.*;version="${slf4jVersion}",
+							*;resolution:=optional,
 						</Import-Package>
 						<Export-Package>
 							com.netflix.astyanax.*;version=${astyanaxVersion},
