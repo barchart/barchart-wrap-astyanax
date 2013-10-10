@@ -31,7 +31,7 @@
 		
 		<unpackSource>target/unpack-source</unpackSource>
 
-		<guavaVersion>[14.0,15-SNAPSHOT)</guavaVersion>
+		<guavaVersion>[14.0,15.0-rc1)</guavaVersion>
 		<slf4jVersion>[1.7,2)</slf4jVersion>
 	</properties>
 
