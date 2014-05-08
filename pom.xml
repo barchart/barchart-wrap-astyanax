@@ -1,11 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>com.barchart.base</groupId>
 		<artifactId>barchart-archon</artifactId>
-		<version>2.5.11</version>
+		<version>2.6.24</version>
 	</parent>
 
 	<groupId>com.barchart.wrap</groupId>
@@ -28,7 +29,7 @@
 		<astyanaxVersion>1.56.42</astyanaxVersion>
 		<cassandraVersion>1.2.2</cassandraVersion>
 		<highScaleLibVersion>1.1.4</highScaleLibVersion>
-		
+
 		<unpackSource>target/unpack-source</unpackSource>
 
 		<guavaVersion>[14.0,15.0-rc1)</guavaVersion>
@@ -80,28 +81,62 @@
 			<scope>provided</scope>
 			<optional>true</optional>
 		</dependency>
-        <dependency>
-            <groupId>org.apache.cassandra</groupId>
-            <artifactId>cassandra-all</artifactId>
-            <version>${cassandraVersion}</version>
-            <scope>provided</scope>
-            <optional>true</optional>            
-        </dependency>
-        <dependency>
-          <groupId>com.github.stephenc.high-scale-lib</groupId>
-          <artifactId>high-scale-lib</artifactId>
-          <version>${highScaleLibVersion}</version>
-          <scope>provided</scope>
-          <optional>true</optional>          
-        </dependency>
-
-
+		<dependency>
+			<groupId>org.apache.cassandra</groupId>
+			<artifactId>cassandra-all</artifactId>
+			<version>${cassandraVersion}</version>
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.github.stephenc.high-scale-lib</groupId>
+			<artifactId>high-scale-lib</artifactId>
+			<version>${highScaleLibVersion}</version>
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
 
 		<!-- Not embedded, transitive. -->
 		<dependency>
 			<groupId>org.apache.cassandra</groupId>
 			<artifactId>cassandra-thrift</artifactId>
 			<version>1.2.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>servlet-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.httpcomponents</groupId>
+					<artifactId>httpclient</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>commons-lang</groupId>
+					<artifactId>commons-lang</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Override excluded dependencies above with OSGI-friendly versions -->
+
+		<dependency>
+			<groupId>com.barchart.wrap</groupId>
+			<artifactId>barchart-wrap-apache-http-all</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-servlet_2.5_spec</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
 		</dependency>
 
 		<dependency>
@@ -109,12 +144,6 @@
 			<artifactId>guava</artifactId>
 			<version>${guavaVersion}</version>
 		</dependency>
-
-
-
-
-
-
 
 	</dependencies>
 
