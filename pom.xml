@@ -10,14 +10,14 @@
 
 	<groupId>com.barchart.wrap</groupId>
 	<artifactId>barchart-wrap-astyanax</artifactId>
-	<version>1.56.42-build006</version>
+	<version>1.56.42-build007-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<scm>
 		<url>https://github.com/barchart/barchart-wrap-astyanax</url>
 		<connection>scm:git:git://github.com/barchart/barchart-wrap-astyanax.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/barchart/barchart-wrap-astyanax.git</developerConnection>
-		<tag>barchart-wrap-astyanax-1.56.42-build006</tag>
+		<tag>master</tag>
 	</scm>
 
 	<description>
