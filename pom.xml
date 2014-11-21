@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>com.barchart.base</groupId>
 		<artifactId>barchart-archon</artifactId>
-		<version>2.6.24</version>
+		<version>2.6.42</version>
 	</parent>
 
 	<groupId>com.barchart.wrap</groupId>
 	<artifactId>barchart-wrap-astyanax</artifactId>
-	<version>1.56.42-build007-SNAPSHOT</version>
+	<version>1.56.48-build001-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<scm>
@@ -25,13 +25,13 @@
 	</description>
 
 	<properties>
-		<astyanaxVersion>1.56.42</astyanaxVersion>
+		<astyanaxVersion>1.56.48</astyanaxVersion>
 		<cassandraVersion>1.2.2</cassandraVersion>
 		<highScaleLibVersion>1.1.4</highScaleLibVersion>
 
 		<unpackSource>target/unpack-source</unpackSource>
 
-		<guavaVersion>[14.0,15.0-rc1)</guavaVersion>
+		<guavaVersion>[18.0,19.0-rc1)</guavaVersion>
 		<slf4jVersion>[1.7,2)</slf4jVersion>
 	</properties>
 
@@ -141,7 +141,6 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>${guavaVersion}</version>
 		</dependency>
 
 	</dependencies>
