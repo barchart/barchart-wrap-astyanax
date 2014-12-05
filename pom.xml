@@ -163,6 +163,7 @@
 						<configuration>
 							<classifier>sources</classifier>
 							<includeScope>provided</includeScope>
+							<excludeGroupIds>org.slf4j</excludeGroupIds>
 							<excludeTransitive>true</excludeTransitive>
 							<failOnMissingClassifierArtifact>false</failOnMissingClassifierArtifact>
 							<outputDirectory>${unpackSource}</outputDirectory>
@@ -176,6 +177,7 @@
 						</goals>
 						<configuration>
 							<includeScope>provided</includeScope>
+							<excludeGroupIds>org.slf4j</excludeGroupIds>
 							<excludeTransitive>true</excludeTransitive>
 							<outputDirectory>target/classes</outputDirectory>
 						</configuration>
